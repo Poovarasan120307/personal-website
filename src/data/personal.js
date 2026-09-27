@@ -21,8 +21,8 @@ export const personalData = {
   ],
   socials: {
     github: "https://github.com/Poovarasan-reva",
-    linkedin: "https://www.linkedin.com/in/poovarasan-n-aa823b416/",
-    emailPlaceholder: "poovarasan.reva@gmail.com" // Editable placeholder as specified
+    email: "poovarsan1207@gmail.com",
+    emailPlaceholder: "poovarsan1207@gmail.com" // Editable email address
   },
   resumePath: "/resume.pdf",
   stats: [
