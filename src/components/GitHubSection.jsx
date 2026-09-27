@@ -46,23 +46,22 @@ export default function GitHubSection() {
 
   useEffect(() => {
     fetch("https://api.github.com/users/Poovarasan-reva/repos?sort=updated&per_page=6")
-      ? fetch("https://api.github.com/users/Poovarasan-reva/repos?sort=updated&per_page=6")
-          .then((res) => {
-            if (!res.ok) throw new Error("API error");
-            return res.json();
-          })
-          .then((data) => {
-            if (Array.isArray(data) && data.length > 0) {
-              setRepos(data);
-            }
-            setLoading(false);
-          })
-          .catch(() => {
-            // Keep fallback
-            setLoading(false);
-          })
-      : setLoading(false);
+      .then((res) => {
+        if (!res.ok) throw new Error("API error");
+        return res.json();
+      })
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setRepos(data);
+        }
+        setLoading(false);
+      })
+      .catch(() => {
+        // Keep fallback repos on error or rate limit
+        setLoading(false);
+      });
   }, []);
+
 
   return (
     <section className="section">
